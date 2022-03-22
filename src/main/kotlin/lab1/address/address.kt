@@ -6,10 +6,8 @@ data class Address(val index: Int, val town: String, val street: String, val num
     }
 }
 
-fun parseAddresses(addresses: String): List<Address>? {
-    if (addresses.isEmpty()) {
-        return null
-    }
+fun parseAddresses(addresses: String): List<Address> {
+    if (addresses.isEmpty()) return emptyList()
 
     val listTemp: List<String> = addresses.lines()
     val mutableList = mutableListOf<Address>()
