@@ -1,5 +1,24 @@
-/*
 package lab3
+
+sealed class Contact(){}
+
+data class Person(val firstName: String, val secondName: String)
+
+data class Phone(val number: String, val phoneType: PhoneType): Contact()
+
+enum class PhoneType {
+    MobilePhone, HomePhone, WorkPhone
+}
+
+data class Email(val email: String): Contact()
+
+data class Link(val socialNetwork: String, val url: String): Contact()
+
+data class Address(val city: String, val street: String, val building: String, val numberHome: String): Contact()
+// add phone, and it types - done
+// add email - done
+// add link - done
+// add address - done
 
 interface ContactsService {
     fun addContact(person: Person, contact: Contact): Contact
@@ -21,4 +40,5 @@ interface ContactsService {
 
     // find
 }
-*/
+
+fun main(){}
