@@ -2,7 +2,11 @@ package lab2
 
 import kotlin.math.sqrt
 
-class Circle(private val radius: Double, override val borderColor: Color, override val fillColor: Color) :
+data class Circle(
+    val radius: Double,
+    override val borderColor: Color,
+    override val fillColor: Color
+) :
     ColoredShape2d {
 
     init {
@@ -20,9 +24,9 @@ class Circle(private val radius: Double, override val borderColor: Color, overri
     }
 }
 
-class Rectangle(
-    private val firstSide: Double,
-    private val secondSide: Double,
+data class Rectangle(
+    val firstSide: Double,
+    val secondSide: Double,
     override val borderColor: Color,
     override val fillColor: Color
 ) : ColoredShape2d {
@@ -42,10 +46,10 @@ class Rectangle(
     }
 }
 
-class Triangle(
-    private val firstSide: Double,
-    private val secondSide: Double,
-    private val thirdSide: Double,
+data class Triangle(
+    val firstSide: Double,
+    val secondSide: Double,
+    val thirdSide: Double,
     override val borderColor: Color,
     override val fillColor: Color
 ) : ColoredShape2d {
@@ -70,8 +74,11 @@ class Triangle(
     }
 }
 
-class Square(private val side: Double, override val borderColor: Color, override val fillColor: Color) :
-    ColoredShape2d {
+data class Square(
+    val side: Double,
+    override val borderColor: Color,
+    override val fillColor: Color
+) : ColoredShape2d {
 
     init {
         if (side <= 0.0) {
@@ -86,7 +93,6 @@ class Square(private val side: Double, override val borderColor: Color, override
     override fun calcArea(): Double {
         return side * side
     }
-
 }
 
 data class Color(
