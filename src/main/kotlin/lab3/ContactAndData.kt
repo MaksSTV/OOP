@@ -2,6 +2,7 @@ package lab3
 
 sealed class Contact
 
+
 data class Person(val firstName: String, val secondName: String)
 
 data class Phone(val phone: String, val phoneType: PhoneType) : Contact()

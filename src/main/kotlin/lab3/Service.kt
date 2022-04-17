@@ -4,11 +4,13 @@ class Service: ContactsService {
     private val service: MutableMap<Person, MutableList<Contact>> = mutableMapOf()
 
     override fun addContact(person: Person, contact: Contact) {
-        //service[person] = contact
-        service[person]!!.add(contact) // []. - https://kotlinlang.ru/docs/reference/map-operations.html
+        service.getOrPut(person) { mutableListOf() }.add(contact)
+        //service[person].add(contact) // []. - https://kotlinlang.ru/docs/reference/map-operations.html
         // is it possible to do otherwise via service.put(person, "I do not understand")?
+        //service.getOrPut(person) { mutableListOf() }.add(contact)
         println("sjdkskdj")
     }
+
     override fun removeContact(person: Person, contact: Contact){
         //service[person]?.remove(contact)
     }
@@ -51,13 +53,9 @@ class Service: ContactsService {
         return emptyList()
     }
 
-    @OptIn(ExperimentalStdlibApi::class)
+
     override fun getAllPersons(): List<Person> {
-        return buildList {
-            service.keys.forEach {
-                this.add(it)
-            }
-        }
+        return emptyList()
     }
     override fun getAllContacts(): Map<Person, List<Contact>>{
         return emptyMap()
