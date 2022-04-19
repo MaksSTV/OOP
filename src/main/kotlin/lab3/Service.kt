@@ -4,12 +4,10 @@ import org.apache.logging.log4j.LogManager
 
 private val LOG = LogManager.getLogger(Service::class.java)
 
-
 class Service : ContactsService {
     private val service: MutableMap<Person, MutableList<Contact>> = mutableMapOf()
 
     override fun addContact(person: Person, contact: Contact) {
-
         service.getOrPut(person) { mutableListOf() }.add(contact)
         LOG.info("add contact $contact for person $person")
     }
@@ -68,7 +66,7 @@ class Service : ContactsService {
     override fun getPersonPhones(person: Person): List<Contact.Phone> {
         val phonesOfPerson = service.get(person)
         return if (phonesOfPerson != null) {
-            LOG.info("return person $person and his phones ${ phonesOfPerson.filterIsInstance<Contact.Phone>()}")
+            LOG.info("return person $person and his phones ${phonesOfPerson.filterIsInstance<Contact.Phone>()}")
             phonesOfPerson.filterIsInstance<Contact.Phone>()
         } else {
             LOG.info("person $person and his phones = null")
@@ -129,7 +127,7 @@ class Service : ContactsService {
             }
         }*/
         // below equivalent?
-        LOG.info("find list of persons ${service.keys.filter{substring in "${it.firstName} ${it.secondName}"}} using substring $substring")
-        return service.keys.filter{substring in "${it.firstName} ${it.secondName}"}
+        LOG.info("find list of persons ${service.keys.filter { substring in "${it.firstName} ${it.secondName}" }} using substring $substring")
+        return service.keys.filter { substring in "${it.firstName} ${it.secondName}" }
     }
 }
