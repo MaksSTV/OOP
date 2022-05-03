@@ -1,0 +1,53 @@
+[
+  {
+    "type": "lab6.Rectangle",
+    "firstSide": 10.3,
+    "secondSide": 55.5,
+    "borderColor": {
+      "red": 90,
+      "green": 91,
+      "blue": 92,
+      "transparent": 0.93
+    },
+    "fillColor": {
+      "red": 94,
+      "green": 95,
+      "blue": 96,
+      "transparent": 0.97
+    }
+  },
+  {
+    "type": "lab6.Rectangle",
+    "firstSide": 8.8,
+    "secondSide": 44.4,
+    "borderColor": {
+      "red": 90,
+      "green": 91,
+      "blue": 92,
+      "transparent": 0.93
+    },
+    "fillColor": {
+      "red": 94,
+      "green": 95,
+      "blue": 96,
+      "transparent": 0.97
+    }
+  },
+  {
+    "type": "lab6.Rectangle",
+    "firstSide": 9.9,
+    "secondSide": 33.3,
+    "borderColor": {
+      "red": 90,
+      "green": 91,
+      "blue": 92,
+      "transparent": 0.93
+    },
+    "fillColor": {
+      "red": 94,
+      "green": 95,
+      "blue": 96,
+      "transparent": 0.97
+    }
+  }
+]
